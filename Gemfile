@@ -33,10 +33,12 @@ gem 'fastthread'
 # end
 
 group :test, :development do
-  gem 'rspec-rails', '>= 2.0.0.beta.20'
-end
-
-group :test do
+  gem 'rspec-rails', '>= 2.0'
   gem 'cucumber-rails'
   gem 'capybara'
 end
+
+#group :test do
+#  gem 'cucumber-rails'
+#  gem 'capybara'
+#end
