@@ -32,6 +32,9 @@ gem 'fastthread'
 #   gem 'webrat'
 # end
 
+gem 'devise'
+gem 'cancan'
+
 group :test, :development do
   gem 'rspec-rails', '>= 2.0'
   gem 'cucumber-rails'
