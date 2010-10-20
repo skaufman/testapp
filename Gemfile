@@ -1,17 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '>= 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'mongrel', '1.2.0.pre2'
+#gem 'mongrel', '1.2.0.pre2'
 gem 'cgi_multipart_eof_fix'
 gem 'fastthread'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -34,6 +34,7 @@ gem 'fastthread'
 
 gem 'devise'
 gem 'cancan'
+gem "escape_utils"
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.0'
