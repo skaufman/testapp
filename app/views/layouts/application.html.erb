@@ -8,7 +8,11 @@
 </head>
 <body>
   <div id="header">
-    <%= link_to("Sign-up",new_user_registration_path) %>
+    <%- if !user_signed_in? -%>
+      <%= link_to("Sign up",new_user_registration_path) %>
+    <%- else -%>
+      Signed in as <%= current_user.email %>
+    <%- end -%>
   </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
