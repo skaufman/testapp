@@ -22,12 +22,16 @@ gem 'unicorn'
 
 gem 'devise'
 gem 'cancan'
-gem "escape_utils"
+gem 'escape_utils'
+gem 'delayed_job', '>=2.0.3', :git => 'git://github.com/collectiveidea/delayed_job.git'
+gem 'nifty-generators'
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.0'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'pickle'
+  gem 'machinist', '>= 2.0.0.beta1'
 end
 
 group :test do

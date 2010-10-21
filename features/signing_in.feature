@@ -10,3 +10,5 @@ Feature: Signing in
     Then I should see "Your account was successfully confirmed"
     Then I should see "Signed in as user@example.com"
   
+
+    
