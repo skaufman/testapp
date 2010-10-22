@@ -25,6 +25,7 @@ gem 'cancan'
 gem 'escape_utils'
 gem 'delayed_job', '>=2.0.3', :git => 'git://github.com/collectiveidea/delayed_job.git'
 gem 'nifty-generators'
+gem 'friendly_id'
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.0'

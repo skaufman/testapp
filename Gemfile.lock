@@ -38,6 +38,7 @@ GEM
     activesupport (3.0.1)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    babosa (0.2.0)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     cancan (1.4.0)
@@ -72,6 +73,8 @@ GEM
     fastthread (1.0.7)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    friendly_id (3.1.7)
+      babosa (~> 0.2.0)
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
@@ -154,6 +157,7 @@ DEPENDENCIES
   email_spec
   escape_utils
   fastthread
+  friendly_id
   machinist (>= 2.0.0.beta1)
   nifty-generators
   pg
