@@ -12,7 +12,3 @@ Feature: Signing up
     And I press "Sign up"
     Then I should see "You have signed up successfully. If enabled, a confirmation was sent to your e-mail."
   
-  
-  
-
-  
