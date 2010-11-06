@@ -8,6 +8,7 @@ Feature: Viewing Projects
     And I am on the homepage
     When I follow "TextMate 2"
     Then I should be on the project page for "TextMate 2"
+    Then show me the page
   
   
   

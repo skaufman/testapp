@@ -55,6 +55,7 @@ GEM
     cgi_multipart_eof_fix (2.5.0)
     childprocess (0.1.3)
       ffi (~> 0.6.3)
+    configuration (1.1.0)
     cucumber (0.9.3)
       builder (~> 2.1.2)
       diff-lcs (~> 1.1.2)
@@ -85,6 +86,9 @@ GEM
     json (1.4.6)
     json_pure (1.4.6)
     kgio (1.3.1)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     machinist (2.0.0.beta2)
     mail (2.2.9)
       activesupport (>= 2.3.6)
@@ -166,6 +170,7 @@ DEPENDENCIES
   escape_utils
   fastthread
   friendly_id
+  launchy
   machinist (>= 2.0.0.beta1)
   nifty-generators
   pg
