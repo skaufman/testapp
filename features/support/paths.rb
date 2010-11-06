@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+      
+    when /the project page for "([^\"]*)"/
+      project_path(Project.find_by_name!($1))
 
     # the following are examples using path_to_pickle
 
