@@ -1,1 +1,7 @@
+<ul>
+  <%- @projects.each do |p| -%>
+    <%= content_tag(:li, link_to(p.name, p)) %>
+  <%- end -%>
+</ul>
+
 <%= link_to("New Project", new_project_path) %>
