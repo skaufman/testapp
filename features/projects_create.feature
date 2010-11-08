@@ -9,13 +9,13 @@ Feature: Creating Projects
   
   Scenario: Creating a Project
     And I fill in "Name" with "TextMate 2"
-    And I press "Create Project"
+    And I press "Save"
     Then I should see "Project has been created."
     And I should be on the project page for "TextMate 2"
     And I should see "Show - Tickets - TestApp"
   
   Scenario: Creating a Project without a Name
-    And I press "Create Project"
+    And I press "Save"
     Then I should see "Project has NOT been created."
     And I should see "Name can't be blank"
   
