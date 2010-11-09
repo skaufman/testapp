@@ -1,3 +1,5 @@
 <%- @title = "Show - Tickets - TestApp" -%>
 <h2><%= @project.name %></h2>
-<%= link_to("Edit", edit_project_path(@project)) %> | <%= link_to("Delete",@project, :method => :delete, :confirm => "Are you SURE? This cannot be undone!") %>
+<%= link_to("Edit", edit_project_path(@project)) %> | 
+<%= link_to("Delete", @project, :method => :delete, :confirm => "Are you SURE? This cannot be undone!") %> |
+<%= link_to("New Ticket", new_project_ticket_path(@project)) %>
