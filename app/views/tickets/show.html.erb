@@ -1,3 +1,3 @@
 <h2><%= @ticket.title %></h2>
 <%= simple_format(@ticket.description) %>
-<%= link_to("Edit", [:edit, @project, @ticket]) %>
+<%= link_to("Edit", [:edit, @project, @ticket]) %> | <%= link_to("Delete", [@project, @ticket], :method => :delete, :confirm => "Are you SURE?") %>
