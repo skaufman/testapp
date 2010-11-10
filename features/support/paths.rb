@@ -12,7 +12,10 @@ module NavigationHelpers
       '/'
       
     when /the project page for "([^\"]*)"/
-      project_path(Project.find_by_name!($1))
+      project_path(project($1))
+
+    when /the "([^\"]*)" ticket in the "([^\"]*)" project/
+      project_ticket_path(project($2), Ticket.find_by_title($1))
 
     # the following are examples using path_to_pickle
 
@@ -45,6 +48,11 @@ module NavigationHelpers
       end
     end
   end
+  
+  def project(name)
+    Project.find_by_name!(name)
+  end
+  
 end
 
 World(NavigationHelpers)
