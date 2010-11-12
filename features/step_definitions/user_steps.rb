@@ -8,3 +8,14 @@ end
 When /^"([^"]*)" has confirmed their account$/ do |email|
   @user = User.find_by_email(email)
 end
+
+When /^I am signed in as them$/ do
+  steps(%Q{
+    Given I am on the homepage
+    When I follow "Sign In"
+    And I fill in "Email" with "#{@user.email}"
+    And I fill in "Password" with "password"
+    And I press "Sign In"
+    Then I should see "Signed in successfully"
+  })
+end

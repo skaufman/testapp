@@ -4,8 +4,11 @@ Feature: Deleting Tickets
   I want make them disappear
   
   Background:
+    Given there is a user with the email address "user@example.com" and password "password"
+    And "user@example.com" has confirmed their account
+    And I am signed in as them
     Given there is a project called "TextMate 2"
-    And that project has a ticket:
+    And "user@example.com" has created a ticket for this project:
       | title          | description                   |
       | Make it shiny! | Gradients! Starbursts! Oh my! |
     Given I am on the homepage
