@@ -4,6 +4,9 @@ Feature: Creating Projects
   I want to create projects
   
   Background: Setup for Creating a Project
+    Given there is an admin with the email address "admin@example.com" and password "password"
+    And "admin@example.com" has confirmed their account
+    And I am signed in as them
     Given I am on the homepage
     When I follow "New Project"
   

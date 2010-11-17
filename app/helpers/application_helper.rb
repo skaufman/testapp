@@ -5,4 +5,10 @@ module ApplicationHelper
     @title || 'TestApp'
   end
 
+  def admins_only(&block)
+    if current_user && current_user.admin?
+      block.call
+    end
+  end
+
 end
