@@ -5,7 +5,6 @@ Feature: Editing Users
   
   Background:
     Given there is an admin with the email address "admin@example.com" and password "password"
-    And "admin@example.com" has confirmed their account
     And I am signed in as them
     And there is a user with the email address "user@example.com" and password "password"
     Given I am on the homepage

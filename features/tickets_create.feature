@@ -6,7 +6,6 @@ Feature: Creating Tickets
   Background:
     Given there is a project called "Internet Explorer"
     And there is a user with the email address "user@example.com" and password "password"
-    And "user@example.com" has confirmed their account
     And I am on the homepage
     When I follow "Internet Explorer"
     And I follow "New Ticket"
