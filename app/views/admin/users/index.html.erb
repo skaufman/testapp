@@ -1,6 +1,6 @@
 <%= link_to("New User", new_admin_user_path) %>
 <ul>
-  <%- @users.each do |u| -%>
-    <%= content_tag(:li, link_to(u.email, [:admin, u])) %>
+  <%- @users.each do |user| -%>
+    <%= content_tag(:li, link_to(user, [:admin, user])) %>
   <%- end -%>
 </ul>
