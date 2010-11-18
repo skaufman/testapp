@@ -1,0 +1,16 @@
+<%= form_for [:admin, @user] do |f| %>
+  <%= error_messages_for :user %>
+  <p>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, "Password" %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.text_field :password_confirmation %>
+  </p>
+  <%= f.submit "Save", :disable_with => 'Saving...' %>
+<% end -%>

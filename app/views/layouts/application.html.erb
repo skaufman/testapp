@@ -18,6 +18,9 @@
   <p class="alert"><%= flash[:alert] %></p>
   <p class="error"><%= flash[:error] %></p>
   <h1><%= link_to("TestApp", root_path) %></h1>
+  <%= admins_only do %>
+    <%= link_to("Admin", admin_root_path) %>
+  <%- end -%>
   <%= yield %>
 
 </body>
