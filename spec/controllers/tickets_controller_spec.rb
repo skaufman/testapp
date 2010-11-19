@@ -13,5 +13,28 @@ describe TicketsController do
       response.should redirect_to(root_path)
       flash[:alert].should eql("The project you requested could not be found.")
     end
+    
+    context "with permission to view the project" do
+      before(:each) do
+        sign_in(:user, user)
+        Permission.create!(:user => user, :thing => project, :action => "view")
+      end
+      
+      def cannot_create_tickets!
+        response.should redirect_to(project)
+        flash[:alert].should eql("You are not allowed to create tickets for this project.")
+      end
+      
+      it "cannot get new for a ticket without perms" do
+        get :new, :project_id => project.id
+        cannot_create_tickets!
+      end
+      
+      it "cannot create a ticket without perms" do
+        post :create, :project_id => project.id
+        cannot_create_tickets!
+      end
+    end
+    
   end
 end
