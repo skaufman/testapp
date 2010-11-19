@@ -9,11 +9,9 @@ Feature: Hidden links
     Given there is an admin with the email address "admin@example.com" and password "password"
     And "admin@example.com" has confirmed their account
     And there is a project called "TextMate 2"
+    And "user@example.com" can view the "TextMate 2" project
     Given I am on the homepage
-    
-  Scenario: New project link is hidden from anonymous visitors
-    Then I should not see the "New Project" link
-    
+        
   Scenario: New project link is hidden from non-admin users
     Given I am signed in as "user@example.com"
     Then I should not see the "New Project" link
@@ -22,10 +20,6 @@ Feature: Hidden links
     Given I am signed in as "admin@example.com"
     Then I should see the "New Project" link
     
-  Scenario:  Edit project link is hidden from anonymous visitors
-    When I follow "TextMate 2"
-    Then I should not see the "Edit" link
-
   Scenario: Edit project link is hidden from non-admin users
     Given I am signed in as "user@example.com"
     When I follow "TextMate 2"
@@ -36,10 +30,6 @@ Feature: Hidden links
     When I follow "TextMate 2"
     Then I should see the "Edit" link
   
-  Scenario:  Delete project link is hidden from anonymous visitors
-    When I follow "TextMate 2"
-    Then I should not see the "Delete" link
-
   Scenario: Delete project link is hidden from non-admin users
     Given I am signed in as "user@example.com"
     When I follow "TextMate 2"

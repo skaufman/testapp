@@ -9,7 +9,7 @@ describe ProjectsController do
     sign_in(:user, user)
     get :show, :id => 'bogus'
     response.should redirect_to(projects_path)
-    flash[:error].should eql("The project you requested could not be found.")
+    flash[:alert].should eql("The project you requested could not be found.")
   end
   
   describe "standard users" do
@@ -26,7 +26,7 @@ describe ProjectsController do
       sign_in(:user, user)
       get :show, :id => project.id
       response.should redirect_to(projects_path)
-      flash[:error].should eql("The project you requested could not be found.")
+      flash[:alert].should eql("The project you requested could not be found.")
     end
 
   end

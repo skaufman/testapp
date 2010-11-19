@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
   before_filter :authorize_admin!, :except => [:index, :show]
-  before_filter :authenticate_user!, :only => [:show]
+  before_filter :authenticate_user!, :only => [:index, :show]
   before_filter :find_project, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @projects = Project.all
+    @projects = Project.for(current_user).all
   end
   
   def new
@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   end
   
   def show
+#    @tickets = @project.tickets
   end
   
   def edit
@@ -33,7 +34,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Project has been updated."
       redirect_to @project
     else
-      flash[:error] = "Project has not been updated."
+      flash[:alert] = "Project has not been updated."
       render :action => "edit"
     end
   end
@@ -47,13 +48,9 @@ class ProjectsController < ApplicationController
   private
   
   def find_project
-    @project = if current_user.admin?
-      Project.find(params[:id])
-    else
-      Project.readable_by(current_user).find(params[:id])
-    end
+    @project = Project.for(current_user).find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = "The project you requested could not be found."
+    flash[:alert] = "The project you requested could not be found."
     redirect_to projects_path
   end
   
