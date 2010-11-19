@@ -11,7 +11,7 @@ Feature: Creating Tickets
     And I am on the homepage
     When I follow "Internet Explorer"
     And I follow "New Ticket"
-  
+
   Scenario: Creating a new ticket
     When I fill in "Title" with "Non-standards compliance"
     And I fill in "Description" with "My pages are ugly!"
