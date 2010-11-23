@@ -25,6 +25,11 @@ describe TicketsController do
         flash[:alert].should eql("You are not allowed to create tickets for this project.")
       end
       
+      def cannot_update_tickets!
+        response.should redirect_to(project)
+        flash[:alert].should eql("You are not allowed to edit tickets for this project.")
+      end
+      
       it "cannot get new for a ticket without perms" do
         get :new, :project_id => project.id
         cannot_create_tickets!
@@ -33,6 +38,16 @@ describe TicketsController do
       it "cannot create a ticket without perms" do
         post :create, :project_id => project.id
         cannot_create_tickets!
+      end
+      
+      it "cannot edit a ticket without perms" do
+        get :edit, :id => ticket.id, :project_id => project.id
+        cannot_update_tickets!
+      end
+      
+      it "cannot update a ticket without perms" do
+        put :update, :id => ticket.id, :project_id => project.id
+        cannot_update_tickets!
       end
     end
     

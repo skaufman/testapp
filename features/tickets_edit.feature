@@ -8,6 +8,7 @@ Feature: Editing Tickets
     And I am signed in as them
     And there is a project called "TextMate 2"
     And "user@example.com" can view the "TextMate 2" project
+    And "user@example.com" can edit tickets on the "TextMate 2" project
     And "user@example.com" has created a ticket for this project:
       | title          | description                   |
       | Make it shiny! | Gradients! Starbursts! Oh my! |
