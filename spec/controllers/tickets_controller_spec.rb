@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TicketsController do
 
   let(:user) { create_user! }
-  let(:project) { Project.create!(:name => "TestProject")}
+  let(:project) { Factory(:project) }
   let(:ticket) { project.tickets.create!(:title => "Restrict Permissions", :description => "For the tickets controller")}
   
   context "standard users" do

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ProjectsController do
   
   let(:user) { create_user! }
-  let(:project) { Project.create!(:name => "TestProject") }
+  let(:project) { Factory(:project) }
   
   it "displays an error message when asked for a missing project" do
     sign_in(:user, user)

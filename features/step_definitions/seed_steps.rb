@@ -1,3 +1,3 @@
 When /^there is a project called "([^\"]*)"$/ do |name|
-  @project = Project.create!(:name => name)
+  @project = Factory(:project, :name => name)
 end

@@ -32,10 +32,11 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'pickle'
-  gem 'machinist', '>= 2.0.0.beta1'
+#  gem 'machinist', '>= 2.0.0.beta1'
 end
 
 group :test do
   gem 'email_spec'
   gem 'launchy'
+  gem 'factory_girl'
 end
