@@ -10,3 +10,8 @@ end
 def find_project(name)
   Project.find_by_name!(name)
 end
+
+When /^I check "([^"]*)" for "([^"]*)"$/ do |permission, name|
+  project = Project.find_by_name!(name)
+  steps(%Q{When I check "permissions_#{project.id}_#{permission.downcase.gsub(" ", "_")}"})
+end

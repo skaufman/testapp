@@ -15,7 +15,7 @@ Testapp::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
+  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -54,8 +54,11 @@ Testapp::Application.routes.draw do
 
   namespace :admin do
     root :to => "base#index"
-    resources :users
+    resources :users do
+      resources :permissions
+    end
   end
+
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
@@ -67,4 +70,6 @@ Testapp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  match '/admin/users/:user_id/permissions', :to => 'admin/permissions#update', :as => :update_user_permissions
+
 end
