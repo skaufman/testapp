@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-require 'factory_girl'
+#require 'factory_girl'
 Dir[Rails.root + "factories/*.rb"].each do |file|
   require file
 end

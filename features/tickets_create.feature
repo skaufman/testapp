@@ -5,7 +5,9 @@ Feature: Creating Tickets
   
   Background:
     Given there is a project called "Internet Explorer"
-    And there is a user with the email address "user@example.com" and password "password"
+    And there are the following users:
+      | email            | password |
+      | user@example.com | password |
     And "user@example.com" can view the "Internet Explorer" project
     And "user@example.com" can create tickets on the "Internet Explorer" project
     And I am signed in as them
@@ -32,13 +34,18 @@ Feature: Creating Tickets
     And I press "Save"
     Then I should see "Ticket has not been created."
     And I should see "Description is too short (minimum is 10 characters)"
-  
-  
-  
-  
-  
-  
-  
-  
 
+  Scenario: Creating a ticket with an attachment
+    When I fill in "Title" with "Add documentation for blink tag"
+    And I fill in "Description" with "The blink tag has an undocumented speed attribute"
+    And I attach the file "spec/fixtures/speed.txt" to "File"
+#    And I attach the file "spec/fixtures/speed.txt" to "File #1"
+#    And I follow "Add another file"
+#    And I attach the file "spec/fixtures/spin.txt" to "File #2"
+    And I press "Save"
+    Then I should see "Ticket has been created."
+    And I should see "speed.txt" within "#ticket .assets"
+#    And I should see "spin.txt" within "#ticket .assets"
+  
+  
   

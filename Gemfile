@@ -22,6 +22,7 @@ gem 'unicorn'
 
 gem 'devise'
 gem 'cancan'
+gem 'paperclip'
 gem 'escape_utils'
 gem 'delayed_job', '>=2.0.3', :git => 'git://github.com/collectiveidea/delayed_job.git'
 gem 'nifty-generators'
@@ -32,11 +33,11 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'pickle'
+  gem 'factory_girl'
 #  gem 'machinist', '>= 2.0.0.beta1'
 end
 
 group :test do
   gem 'email_spec'
   gem 'launchy'
-  gem 'factory_girl'
 end
