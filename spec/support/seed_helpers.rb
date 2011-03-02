@@ -1,6 +1,6 @@
 module SeedHelpers
   def create_user!(attributes={})
-    default_attributes = { :email => "user@example.com", :password => "password", :password_confirmation => "password"}
+    default_attributes = { :email => "user#{rand(10000)}@example.com", :password => "password", :password_confirmation => "password"}
     user = Factory(:user, default_attributes.merge(attributes))
     user.confirm!
     user
